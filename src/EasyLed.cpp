@@ -131,8 +131,7 @@ void EasyLed::update()
     }
     return;
   }
-
-  // Figure out where we are within a sequence
+ 
   unsigned int blinkingDuration = blinkDuration * mBlinks;
   unsigned int timeInSequence = elapsedTime % sequenceDuration;
   if (timeInSequence < blinkingDuration && timeInSequence % blinkDuration < mOnDuration)
