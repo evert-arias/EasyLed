@@ -1,0 +1,9 @@
+EasyLed	KEYWORD1
+setPinKEYWORD2
+setPolarityKEYWORD2
+blink	KEYWORD2
+on	KEYWORD2
+off	KEYWORD2
+onUntil	KEYWORD2
+offUntil	KEYWORD2
+update	KEYWORD2
