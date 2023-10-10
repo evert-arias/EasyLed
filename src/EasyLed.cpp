@@ -65,20 +65,20 @@ void EasyLed::setPolarity(uint8_t polarity)
 }
 
 void EasyLed::blink(unsigned int const onDuration,
-                       unsigned int const offDuration,
-                       byte const blinks,
-                       unsigned int const pauseDuration,
-                       unsigned int const sequences,
-                       void (*finishedCallbackFunction)())
+                    unsigned int const offDuration,
+                    byte const blinks,
+                    unsigned int const pauseDuration,
+                    unsigned int const sequences,
+                    void (*finishedCallbackFunction)())
 {
-  mOnDuration = onDuration ? max(MINIMUM_INTERVAL, onDuration) : 0;
-  mOffDuration = offDuration ? max(MINIMUM_INTERVAL, offDuration) : 0;
+  mOnDuration = onDuration ? my_max(MINIMUM_INTERVAL, onDuration) : 0;
+  mOffDuration = offDuration ? my_max(MINIMUM_INTERVAL, offDuration) : 0;
   mBlinks = blinks;
-  mPauseDuration = pauseDuration ? max(MINIMUM_INTERVAL, pauseDuration) : 0;
+  mPauseDuration = pauseDuration ? my_max(MINIMUM_INTERVAL, pauseDuration) : 0;
   ;
   mSequences = sequences;
   mFinishedCallbackFunction = finishedCallbackFunction;
-  mStartTime = max(millis(), 1);
+  mStartTime = my_max(millis(), 1);
   mLastRunTime = 0;
   update();
 }
@@ -131,7 +131,7 @@ void EasyLed::update()
     }
     return;
   }
- 
+
   unsigned int blinkingDuration = blinkDuration * mBlinks;
   unsigned int timeInSequence = elapsedTime % sequenceDuration;
   if (timeInSequence < blinkingDuration && timeInSequence % blinkDuration < mOnDuration)
