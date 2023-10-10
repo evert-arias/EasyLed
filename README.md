@@ -73,9 +73,3 @@ led.offUntil(offDuration, onFinished);
  /* Allways call this method in the loop. */
  led.update();
 ```
-
-
-
-## Copyright
-
-[MIT](https://github.com/ariascode/MyBlinker/blob/master/LICENSE.md) © [Evert Arias](https://ariascode.com)
